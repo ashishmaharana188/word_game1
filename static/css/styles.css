@@ -28,16 +28,15 @@ body {
   border-bottom: 1px solid #ccc;
   text-align: center;
   border-color: olive;
-  width: 20%;
+  width: 250px;
+  height: 50px;
   position: relative; /* or 'relative' depending on your layout */
   top: 30px;
   left: 220px;
   background: olive;
   color: whitesmoke;
   border-radius: 12px;
-  text-align: center;
   justify-content: center;
-  padding: 20px;
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
