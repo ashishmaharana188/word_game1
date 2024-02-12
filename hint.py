@@ -23,7 +23,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
 # initialize the Cohere Client with an API Key
-co = cohere.Client("eoG1ggduiCz03Z9nCkIWjAsKCoLiqznOZLRBPq74")
+co = cohere.Client("EqTIen7olgoBsnvrcDO4LMQcoga6N3CvQLfUJZrN")
 
 
 @app.get("/")
