@@ -1,5 +1,5 @@
 //
-const apiUrl = "https://word-game1.vercel.app/hint";
+const apiUrl = "http://localhost:8000/hint";
 
 // query selector
 const startBtn = document.querySelector(".start_btn");
@@ -256,6 +256,17 @@ function resetGame() {
   currentStreak = 0;
   highestStreak = 0;
   gameEnded = false;
+
+  // score reset
+  lastRoundScore = 0;
+  highestScore = 0;
+  roundScore = 0;
+  allRoundScore = {};
+  roundStreak = 0;
+  currentStreak = 0;
+  highestStreak = 0;
+  carriedStreak = 0;
+  round = 0;
 
   // Reset UI elements
   hintWord.textContent = "";
