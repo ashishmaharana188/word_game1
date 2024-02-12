@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "builds": [{ "src": "hint.py", "use": "@vercel/python" }],
+  "routes": [{ "src": "/(.*)", "dest": "/hint.py" }],
+  "env": {
+    "APP_MODULE": "hint:app"
+  }
+}
