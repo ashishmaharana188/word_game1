@@ -11,7 +11,7 @@ app = FastAPI()
 # Enable CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://127.0.0.1:8000"],
+    allow_origins=["https://word-game1.vercel.app/hint"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
