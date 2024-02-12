@@ -1,5 +1,5 @@
 //
-const apiUrl = "https://wordgametrial.vercel.app";
+const apiUrl = "https://word-game1.vercel.app";
 
 // query selector
 const startBtn = document.querySelector(".start_btn");
