@@ -7,7 +7,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
-origins = ["https://word-game1-a0vgbvuee-ashish-maharanas-projects.vercel.app"]
+origins = ["https://word-game1-i6eqkaiu9-ashish-maharanas-projects.vercel.app"]
 # Enable CORS
 app.add_middleware(
     CORSMiddleware,
