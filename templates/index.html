@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', path='/css/styles.css') }}"
+    />
+    <title>WORD GAME</title>
+  </head>
+  <body>
+    <!--Global div-->
+    <div class="main_div">
+      <!--Streak_div-->
+      <div class="streak">
+        <p>streak bar</p>
+        <div class="streak_bar">
+          <!--add per="n" to add text to skill per, controlled with skill_per::after/before in css-->
+          <div class="skill_per"></div>
+        </div>
+      </div>
+      <!--streak_div end-->
+      <!--game body-->
+      <h1 id="wordStatus">Guess the word</h1>
+      <div class="main_contents">
+        <input type="text" class="main_typing" maxlength="1" />
+        <div class="main_inputs"></div>
+        <div class="main_details">
+          <p class="main_hint">
+            Hint: <span id="hintPlaceholder">Hint will be shown here</span>
+          </p>
+          <p class="chance">Chances: <span id="chancesPlaceholder"></span></p>
+          <p class="letterWrong">
+            Wrong letters:
+            <span id="wrongLettersPlaceholder"></span>
+          </p>
+        </div>
+        <button class="start_btn">Start Game</button>
+        <button class="reset_btn">Reset Game</button>
+      </div>
+      <!--game body end-->
+      <div class="letterPresent">
+        <p id="letterPtag"></p>
+        <p></p>
+      </div>
+    </div>
+    <!--Global div end-->
+    <section class="scores">
+      SCORES
+      <p class="highest_streak"></p>
+      <p class="total_points"></p>
+      <p class="high_score"></p>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script defer src="{{ url_for('static', path='/js/script.js') }}"></script>
+  </body>
+</html>
