@@ -426,6 +426,7 @@ async function startGame() {
         randomWord();
         updateHint();
         showParagraphs();
+        letterInput.focus();
       }, 20);
     } else {
       window.alert(`Failed to fetch data. Status code: ${response.status}`);
