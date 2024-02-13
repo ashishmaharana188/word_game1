@@ -447,7 +447,9 @@ resetBtn.addEventListener("click", resetGame);
 document.addEventListener("click", () => {
   letterInput.focus();
 });
-letterInput.addEventListener("keyup", (e) => {
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+if (isTouchDevice) {
+letterInput.addEventListener("input", (e) => {
   if (fetchedData !== null) {
     const pressedKey = e.key;
 
@@ -460,30 +462,24 @@ letterInput.addEventListener("keyup", (e) => {
     }
   }
 });
+} else {
+  letterInput.addEventListener("keyup", (e) => {
+  if (fetchedData !== null) {
+    const pressedKey = e.key;
+
+    // Check if the pressed key is a valid alphabet or hyphen
+    if (/^[A-Za-z-]$/.test(pressedKey)) {
+      singleInput(e);
+    } else {
+      // Handle invalid key (optional)
+      console.log("Invalid key pressed:", pressedKey);
+    }
+  }
+});
+}
 document
   .querySelector(".scores")
   .addEventListener("click", toggleScoresVisibility);
 
 //
 
-document.addEventListener("touchend", () => {
-  letterInput.focus();
-});
-letterInput.addEventListener("touchend", (e) => {
-  if (fetchedData !== null) {
-    const pressedKey = e.key;
-
-    // Check if the pressed key is a valid alphabet or hyphen
-    if (/^[A-Za-z-]$/.test(pressedKey)) {
-      singleInput(e);
-    } else {
-      // Handle invalid key (optional)
-      console.log("Invalid key pressed:", pressedKey);
-    }
-  }
-});
-document
-  .querySelector(".scores")
-  .addEventListener("touchend", toggleScoresVisibility);
-
-//
