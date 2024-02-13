@@ -131,6 +131,7 @@ function singleInput(e) {
         maxGuesses--;
         incorrectLetters.push(` ${singleKey} `);
         streak = 0;
+        carriedStreak = 0;
         currentStreak = streak;
         updateStreakBar();
       } //
