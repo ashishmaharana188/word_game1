@@ -1,5 +1,5 @@
 //
-const apiUrl = "https://word-game1.vercel.app/hint";
+const apiUrl = "http://localhost:8000/hint";
 
 // query selector
 const startBtn = document.querySelector(".start_btn");
@@ -17,6 +17,7 @@ let streakQuery = document.querySelector(".highest_streak");
 let pointsQuery = document.querySelector(".total_points");
 let highScoreQuery = document.querySelector(".high_score");
 let gameEnded = false;
+let focusInput = document.querySelector(".main_div");
 //
 //
 // streak vars
@@ -426,8 +427,6 @@ async function startGame() {
         randomWord();
         updateHint();
         showParagraphs();
-        letterInput.focus();
-        letterInput.click();
       }, 20);
     } else {
       window.alert(`Failed to fetch data. Status code: ${response.status}`);
@@ -446,9 +445,8 @@ resetBtn.addEventListener("click", resetGame);
 
 //  input letter
 
-document.addEventListener("click", () => {
+focusInput.addEventListener("click", () => {
   letterInput.focus();
-  letterInput.click();
 });
 letterInput.addEventListener("keyup", (e) => {
   if (fetchedData !== null) {
@@ -463,6 +461,14 @@ letterInput.addEventListener("keyup", (e) => {
     }
   }
 });
+document.addEventListener("click", (event) => {
+  // Check if the click event occurred outside .main_div
+  if (!event.target.closest(".main_div")) {
+    letterInput.blur(); // Remove focus
+  }
+});
 document
   .querySelector(".scores")
   .addEventListener("click", toggleScoresVisibility);
+
+//
