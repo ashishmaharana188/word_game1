@@ -87,7 +87,7 @@ function singleInput(e) {
   //
   if (gameEnded === false) {
     currentStreak = streak;
-    let singleKey = e.key,
+    let singleKey = e.target.value,
       similarInput = Object.keys(fetchedData)[0],
       inputElements = inputs.querySelectorAll("input[type='text']");
 
@@ -158,7 +158,7 @@ function singleInput(e) {
     streakQuery.textContent = `highest streak: ${highestStreak}`;
     chanceLeft.innerHTML = maxGuesses;
     wrongLetters.innerText = incorrectLetters;
-    letterInput.value = singleKey;
+    letterInput.value = "";
     //
     // streak ++ here so that it updates +1 after updateStreakBar() is called
     console.log(singleKey);
@@ -451,7 +451,7 @@ const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 |
 if (isTouchDevice) {
 letterInput.addEventListener("input", (e) => {
   if (fetchedData !== null) {
-    const pressedKey = e.key;
+    const pressedKey = e.target.value;
 
     // Check if the pressed key is a valid alphabet or hyphen
     if (/^[A-Za-z-]$/.test(pressedKey)) {
@@ -465,7 +465,7 @@ letterInput.addEventListener("input", (e) => {
 } else {
   letterInput.addEventListener("keyup", (e) => {
   if (fetchedData !== null) {
-    const pressedKey = e.key;
+    const pressedKey = e.target.value;
 
     // Check if the pressed key is a valid alphabet or hyphen
     if (/^[A-Za-z-]$/.test(pressedKey)) {
