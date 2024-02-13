@@ -261,24 +261,30 @@ body {
 
 @media only screen and (max-width: 900px) {
   body {
-    background: olive; /* Adjust layout for smaller screens */
+    background: olive;
+    flex-direction: column; /* Adjust layout for smaller screens */
   }
 
   .scores {
     width: 30%;
-    left: 0;
+    left: 2%;
   }
   .main_div {
-    width: 50%;
+    width: 70%;
     left: 0;
   }
 
   .main_div h1 {
     padding: 10px 15px;
   }
-
+  .main_inputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+  }
   .main_inputs input {
-    width: calc(50% - 8px);
+    width: 18%;
     margin: 8px;
   }
 }
