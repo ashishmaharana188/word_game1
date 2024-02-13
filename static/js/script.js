@@ -465,3 +465,25 @@ document
   .addEventListener("click", toggleScoresVisibility);
 
 //
+
+document.addEventListener("touchend", () => {
+  letterInput.focus();
+});
+letterInput.addEventListener("touchend", (e) => {
+  if (fetchedData !== null) {
+    const pressedKey = e.key;
+
+    // Check if the pressed key is a valid alphabet or hyphen
+    if (/^[A-Za-z-]$/.test(pressedKey)) {
+      singleInput(e);
+    } else {
+      // Handle invalid key (optional)
+      console.log("Invalid key pressed:", pressedKey);
+    }
+  }
+});
+document
+  .querySelector(".scores")
+  .addEventListener("touchend", toggleScoresVisibility);
+
+//
