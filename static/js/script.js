@@ -461,12 +461,6 @@ letterInput.addEventListener("keyup", (e) => {
     }
   }
 });
-document.addEventListener("pointerup", (event) => {
-  // Check if the click event occurred outside .main_div
-  if (!event.target.closest(".main_div")) {
-    letterInput.blur(); // Remove focus
-  }
-});
 document
   .querySelector(".scores")
   .addEventListener("click", toggleScoresVisibility);
