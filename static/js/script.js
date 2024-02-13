@@ -445,7 +445,10 @@ resetBtn.addEventListener("click", resetGame);
 
 //  input letter
 
-document.addEventListener("keydown", () => letterInput.focus());
+document.addEventListener("click", () => {
+  letterInput.focus();
+  letterInput.click();
+});
 letterInput.addEventListener("keyup", (e) => {
   if (fetchedData !== null) {
     const pressedKey = e.key;
@@ -462,5 +465,3 @@ letterInput.addEventListener("keyup", (e) => {
 document
   .querySelector(".scores")
   .addEventListener("click", toggleScoresVisibility);
-
-//
