@@ -445,7 +445,7 @@ resetBtn.addEventListener("click", resetGame);
 
 //  input letter
 
-focusInput.addEventListener("pointerdown", () => {
+focusInput.addEventListener("click", () => {
   letterInput.focus();
 });
 letterInput.addEventListener("keyup", (e) => {
