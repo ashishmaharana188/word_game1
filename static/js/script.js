@@ -427,6 +427,7 @@ async function startGame() {
         updateHint();
         showParagraphs();
         letterInput.focus();
+        letterInput.click();
       }, 20);
     } else {
       window.alert(`Failed to fetch data. Status code: ${response.status}`);
