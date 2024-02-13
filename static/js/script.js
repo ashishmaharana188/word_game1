@@ -445,22 +445,8 @@ resetBtn.addEventListener("click", resetGame);
 
 //  input letter
 
-focusInput.addEventListener("click", () => {
+focusInput.addEventListener("pointerdown", () => {
   letterInput.focus();
-});
-// Add a touchstart event listener to the main_div
-focusInput.addEventListener("touchstart", (event) => {
-  // Prevent the default touchstart behavior to avoid unwanted side effects
-  event.preventDefault();
-  letterInput.focus();
-});
-
-// Add a touchend event listener to the document
-document.addEventListener("touchend", (event) => {
-  // Check if the touchend event occurred outside .main_div
-  if (!event.target.closest(".main_div")) {
-    letterInput.blur(); // Remove focus
-  }
 });
 letterInput.addEventListener("keyup", (e) => {
   if (fetchedData !== null) {
@@ -475,7 +461,7 @@ letterInput.addEventListener("keyup", (e) => {
     }
   }
 });
-document.addEventListener("click", (event) => {
+document.addEventListener("pointerup", (event) => {
   // Check if the click event occurred outside .main_div
   if (!event.target.closest(".main_div")) {
     letterInput.blur(); // Remove focus
