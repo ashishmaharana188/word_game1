@@ -1,5 +1,5 @@
 //
-const apiUrl = "http://localhost:8000/hint";
+const apiUrl = "https://wordgametrial.vercel.app/hint";
 
 // query selector
 const startBtn = document.querySelector(".start_btn");
