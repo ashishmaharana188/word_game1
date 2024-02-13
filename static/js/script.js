@@ -17,7 +17,6 @@ let streakQuery = document.querySelector(".highest_streak");
 let pointsQuery = document.querySelector(".total_points");
 let highScoreQuery = document.querySelector(".high_score");
 let gameEnded = false;
-let focusInput = document.querySelector(".main_div");
 //
 //
 // streak vars
@@ -445,7 +444,7 @@ resetBtn.addEventListener("click", resetGame);
 
 //  input letter
 
-focusInput.addEventListener("click", () => {
+document.addEventListener("click", () => {
   letterInput.focus();
 });
 letterInput.addEventListener("keyup", (e) => {
